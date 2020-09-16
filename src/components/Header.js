@@ -1,8 +1,6 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-
-/*icon imports*/
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useStateValue } from "../StateProvider";
@@ -26,10 +24,12 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <div className="header__opt">
-          <span className="header__line1">Hello Guest</span>
-          <span className="header__line2">Sign In</span>
-        </div>
+        <Link to="/login">
+          <div className="header__opt">
+            <span className="header__line1">Hello Guest</span>
+            <span className="header__line2">Sign In</span>
+          </div>
+        </Link>
 
         <div className="header__opt">
           <span className="header__line1">Returns</span>

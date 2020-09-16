@@ -15,11 +15,12 @@ function Home() {
 
       <div className="home__row">
         <Product
+          id="123142121551"
           title={"Apple iPhone X, 64GB, Space Gray - Fully Unlocked (Renewed)"}
           image={
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/383px-IPhone_X_vector.svg.png"
           }
-          price={"100.00"}
+          price={100.0}
           rating={5}
         />
 

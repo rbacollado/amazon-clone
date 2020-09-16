@@ -1,0 +1,12 @@
+.login {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  flex-direction: column;
+}
+.login__image {
+  width: 110px;
+  object-fit: contain;
+  margin-right: auto;
+  margin-left: auto;
+}

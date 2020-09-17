@@ -16,12 +16,12 @@ function Login() {
       <div className="login__container">
         <h1>Sign In</h1>
         <form>
-          <h5>Email (phone for mobile accounts)</h5>
+          <h5>Email</h5>
           <input type="text" />
 
           <h5>Password</h5>
           <input type="text" />
-          <button>Continue</button>
+          <button className="login__signIn">Continue</button>
         </form>
 
         <p>
@@ -29,6 +29,8 @@ function Login() {
           Use and Privacy Notice.
         </p>
       </div>
+      <p>New to Amazon?</p>
+      <button className="login__resgister">Create your Amazon account </button>
     </div>
   );
 }

@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../firebase.js";
 
 function Login() {
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((err) => alert(err.message));
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        /* successfully created an user with an email and password*/
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((err) => alert(err.message));
+  };
+
   return (
     <div className="login">
       <Link to="/">
@@ -17,11 +46,21 @@ function Login() {
         <h1>Sign In</h1>
         <form>
           <h5>Email</h5>
-          <input type="text" />
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+          />
 
           <h5>Password</h5>
-          <input type="text" />
-          <button className="login__signIn">Continue</button>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+          />
+          <button className="login__signIn" type="submit" onClick={signIn}>
+            Continue
+          </button>
         </form>
 
         <p>
@@ -30,7 +69,9 @@ function Login() {
         </p>
       </div>
       <p>New to Amazon?</p>
-      <button className="login__resgister">Create your Amazon account </button>
+      <button className="login__resgister" onClick={register}>
+        Create your Amazon account{" "}
+      </button>
     </div>
   );
 }

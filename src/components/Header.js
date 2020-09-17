@@ -1,12 +1,20 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import { auth } from "../firebase.js";
+
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { useStateValue } from "../StateProvider";
 
 function Header() {
-  const [{ cart }] = useStateValue();
+  const [{ cart, user }] = useStateValue();
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="header">
@@ -24,10 +32,14 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <Link to="/login">
-          <div className="header__opt">
-            <span className="header__line1">Hello Guest</span>
-            <span className="header__line2">Sign In</span>
+        <Link to={!user && "/login"}>
+          <div onClick={handleAuth} className="header__opt">
+            <span className="header__line1">
+              {user ? `Hello ${user.email}` : "Hello Guest"}
+            </span>
+            <span className="header__line2">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
 

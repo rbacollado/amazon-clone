@@ -1,5 +1,6 @@
 export const initialState = {
   cart: [],
+  user: null,
 };
 
 /* selector that gets the subtotal */
@@ -28,10 +29,15 @@ const reducer = (state, action) => {
           `Cant remove product (id: ${index}) as its not in basket!`
         );
       }
-
       return {
         ...state,
         cart: newCart,
+      };
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
 
     default:

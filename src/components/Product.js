@@ -3,9 +3,7 @@ import "./product.css";
 import { useStateValue } from "../StateProvider";
 
 function Product({ id, title, image, price, rating }) {
-  const [{ cart }, dispatch] = useStateValue();
-
-  console.log("product cart: ", cart);
+  const [{}, dispatch] = useStateValue();
 
   const addToCart = () => {
     dispatch({

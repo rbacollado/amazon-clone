@@ -27,6 +27,7 @@ function Login() {
         console.log(auth);
         if (auth) {
           history.push("/");
+          alert("Registered Successfully");
         }
       })
       .catch((err) => alert(err.message));

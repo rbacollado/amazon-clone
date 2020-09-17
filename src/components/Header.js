@@ -48,11 +48,6 @@ function Header() {
           <span className="header__line2">& Orders</span>
         </div>
 
-        <div className="header__opt">
-          <span className="header__line1">Your</span>
-          <span className="header__line2">Prime</span>
-        </div>
-
         <Link to="/checkout">
           <div className="header__optCart">
             <ShoppingCartIcon className="header__cart" />

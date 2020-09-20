@@ -4,6 +4,7 @@
   padding: 15px;
   flex-direction: column;
   background-color: white;
+  height: 100vh;
 }
 .login__image {
   width: 100px;

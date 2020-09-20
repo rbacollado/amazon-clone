@@ -1,18 +1,74 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import Product from "../components/Product";
 import Category from "../components/Category";
+
+/*  imports carousel */
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const homeBanners = [
+  {
+    url:
+      "https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_45M_v2_1x._CB432458380_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_1x._CB432469755_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Currency_v2_en_US_2x._CB428993290_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Beauty_v2_en_US_1x._CB429089975_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Home_v2_en_US_1x._CB429090084_.jpg",
+  },
+  {
+    url:
+      "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Sports_en_US_1x._CB431860448_.jpg",
+  },
+];
+
+const settings = {
+  dots: false,
+  arrows: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  className: "slides",
+};
 
 function Home() {
   return (
     <div className="home">
       <div className="home__container">
         {/* make this carousel */}
-        <img
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          className="home__image"
-          alt=""
-        />
+        <div className="home__slider__container">
+          <div className="home__slider">
+            <Slider {...settings}>
+              {homeBanners.map((photo) => {
+                return (
+                  <div>
+                    <img src={photo.url} alt="" />
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
 
         <div className="home__row">
           {/* category cards */}
@@ -34,7 +90,6 @@ function Home() {
             title="Trending Now"
           />
         </div>
-
         <div className="home__row">
           {/* make product rows */}
           <Product
@@ -64,7 +119,6 @@ function Home() {
             image="https://images-na.ssl-images-amazon.com/images/I/71trhuzbhML._AC_SL1500_.jpg"
           />
         </div>
-
         <div className="home__row">
           <Product
             id="4903850"
@@ -90,7 +144,6 @@ function Home() {
             image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
           />
         </div>
-
         <div className="home__row">
           <Product
             id="3254354345"

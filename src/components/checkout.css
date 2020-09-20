@@ -1,6 +1,6 @@
 .checkout {
   display: flex;
-  padding: 20px;
+  padding: 15px;
   background-color: white;
   height: max-content;
 }
@@ -15,4 +15,7 @@
 }
 .checkout__title h1 {
   font-weight: 400;
+}
+.checkout__title a {
+  text-decoration: none;
 }

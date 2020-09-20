@@ -19,7 +19,7 @@ function Checkout() {
         />
 
         <div className="checkout__title">
-          <h1>Shopping Cart</h1>
+          <h1>Shopping Cart ({cart?.length} items)</h1>
         </div>
         {cart.map((item) => (
           <CheckoutProduct

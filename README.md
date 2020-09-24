@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 a Amazon clone using ReactJS, Stripe Payment API, and Firebase.
 
 --Features

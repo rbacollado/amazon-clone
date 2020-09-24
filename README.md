@@ -2,11 +2,11 @@ a Amazon clone using ReactJS, Stripe Payment API, and Firebase.
 
 --Features
 
-Implemented Email sign in using Firebase Authentication.
-Implemented Stripe API for online payment transactions.
-Firebase Functions for Back-end.
-ReactJs for Front-end.
-Deployed in Firebase.
+1. Implemented Email sign in using Firebase Authentication.
+2. Implemented Stripe API for online payment transactions.
+3. Firebase Functions for Back-end.
+4. ReactJs for Front-end.
+5. Deployed in Firebase.
 
 
 

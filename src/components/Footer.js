@@ -69,7 +69,7 @@ function Footer() {
                     alt=""
                 />
                 <span className="footer__endMessage">
-                    Made with ❤️ by {" "} 
+                    Made with ❤️ by
                     <a href="https://github.com/rbacollado"> rbacollado</a>
                 </span>
             </div>

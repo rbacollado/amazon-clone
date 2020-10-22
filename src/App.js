@@ -13,6 +13,7 @@ import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Payment from "./components/Payment";
 import Orders from "./components/Orders";
+import Footer from "./components/Footer";
 
 const promise = loadStripe(
   "pk_test_51HSkehFx9e9PF48jyQuY74vUKA92L7Aur43H7icaJZBokkNB0CE6iS17bIb2oZlu5ANSOf0lGVkwFoSsp77qdgrm00k8JwD4AJ"
@@ -67,6 +68,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
